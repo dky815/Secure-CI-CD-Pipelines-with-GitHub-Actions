@@ -225,28 +225,28 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
-          target: 'https://petstore.octoperf.com/actions/Catalog.action' # Change URL or IP of your target application
+          target: 'http://ecsloadbalancer-1600554619.us-west-2.elb.amazonaws.com/jpetstore/' # Change URL or IP of your target application
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
 
-  nuclei-scan:
-    runs-on: ubuntu-latest
-    needs: [zap_scan]
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Nuclei - Vulnerability Scan
-        uses: projectdiscovery/nuclei-action@main
-        with:
-          target: 'https://petstore.octoperf.com/actions/Catalog.action'
-
-      - name: GitHub Workflow artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: nuclei.log
-          path: nuclei.log
-
-      - name: GitHub Security Dashboard Alerts update
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: nuclei.sarif
+#  nuclei-scan:
+#    runs-on: ubuntu-latest
+#    needs: [zap_scan]
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Nuclei - Vulnerability Scan
+#        uses: projectdiscovery/nuclei-action@main
+#        with:
+#          target: 'http://ecsloadbalancer-1600554619.us-west-2.elb.amazonaws.com/jpetstore/'
+#
+#      - name: GitHub Workflow artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: nuclei.log
+#          path: nuclei.log
+#
+#      - name: GitHub Security Dashboard Alerts update
+#        uses: github/codeql-action/upload-sarif@v2
+#        with:
+#          sarif_file: nuclei.sarif
