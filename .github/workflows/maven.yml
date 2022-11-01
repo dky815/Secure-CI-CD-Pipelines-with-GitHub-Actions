@@ -14,7 +14,7 @@ env:
   # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: sample-app           # set this to the name of the container in the
 jobs:
-#  sonarcloud:
+#  sonar:
 #    runs-on: ubuntu-latest
 #    steps:
 #      - uses: actions/checkout@v2
@@ -143,7 +143,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: production
-    needs: [snykScan,gitleaks,CodeQL-Build,sonarcloud]
+    needs: [snykScan,gitleaks,CodeQL-Build,sonar]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
