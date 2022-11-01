@@ -318,8 +318,8 @@
     <mockito.version>4.8.0</mockito.version>
     <hsqldb.version>2.5.2</hsqldb.version>
     <module.name>org.mybatis.jpetstore</module.name>
-    <sonar.organization>default</sonar.organization>
-    <sonar.projectKey>jpetstore</sonar.projectKey>
+    <sonar.organization>ilovecccp</sonar.organization>
+    <sonar.projectKey>cl456852_jpetstore-6</sonar.projectKey>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     <!-- Reproducible Builds -->
