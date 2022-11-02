@@ -1,4 +1,4 @@
-MyBatis JPetStore
+Secure Flow
 =================
 
 [![Java CI](https://github.com/mybatis/jpetstore-6/actions/workflows/ci.yaml/badge.svg)](https://github.com/mybatis/jpetstore-6/actions/workflows/ci.yaml)
@@ -6,20 +6,61 @@ MyBatis JPetStore
 [![Coverage Status](https://coveralls.io/repos/github/mybatis/jpetstore-6/badge.svg?branch=master)](https://coveralls.io/github/mybatis/jpetstore-6?branch=master)
 [![License](https://img.shields.io/:license-apache-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-![mybatis-jpetstore](https://mybatis.org/images/mybatis-logo.png)
+[//]: # (![mybatis-jpetstore]&#40;https://mybatis.org/images/mybatis-logo.png&#41;)
 
-JPetStore 6 is a full web application built on top of MyBatis 3, Spring 5 and Stripes.
+Secure Flow is a GitHub Action pipeline with security features for Maven projects.
 
-Essentials
+Structure
 ----------
+![Secure Flow](https://raw.githubusercontent.com/cl456852/jpetstore-6/master/img/structure.jpg)
 
-* [See the docs](http://www.mybatis.org/jpetstore-6)
+## Modules
+>
+>
+> | Name        | Description |
+  > | -------------- | ----------- |
+> | Gitleaks    | Gitleaks is a SAST tool for detecting and preventing hardcoded secrets like passwords, api keys, and tokens in git repos. |
+> | CodeQL           | Discover vulnerabilities across a codebase with CodeQL, our industry-leading semantic code analysis engine.|
+> | Sonar     | Enable your team to deliver clean code consistently and efficiently with a tool that easily integrates into the cloud DevOps platforms and extend your CI/CD workflow.|
+> | Snyk     | Find and automatically fix vulnerabilities in your code, open source dependencies, containers, and infrastructure as code.|
+> | Create Image   | Create a docker image containing the project |
+> | Trivy   | Trivy (tri pronounced like trigger, vy pronounced like envy) is a comprehensive security scanner. |
+> | Deploy| Upload the image to ECR, and deploy it to ECS|
+> | ZAP | Web app vulnerbility |
+> | Nuclei       | Nuclei is used to send requests across targets based on a template, leading to zero false positives and providing fast scanning on a large number of hosts. |
 
-## Other versions that you may want to know about
 
-- JPetstore on top of Spring, Spring MVC, MyBatis 3, and Spring Security https://github.com/making/spring-jpetstore
-- JPetstore with Vaadin and Spring Boot with Java Config https://github.com/igor-baiborodine/jpetstore-6-vaadin-spring-boot
-- JPetstore on MyBatis Spring Boot Starter https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore
+## How to Use
+
+### Config
+
+#### SONAR
+- secrets.SONAR_TOKEN  
+- Dsonar.projectKey
+
+#### gitleaks
+
+
+#### CodeQL-Build
+
+#### snykScan
+- secrets.SNYK_TOKEN
+
+#### deploy
+- secrets.AWS_ACCESS_KEY_ID
+- secrets.AWS_SECRET_ACCESS_KEY
+- env.AWS_REGION
+- env.ECS_SERVICE
+- env.ECS_CLUSTER
+- env.ECS_TASK_DEFINITION //aws/task_definition.json
+- evn.CONTAINER_NAME
+
+### File
+
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Run on Application Server
 Running JPetStore sample under Tomcat (using the [cargo-maven2-plugin](https://codehaus-cargo.github.io/cargo/Maven2+plugin.html)).
