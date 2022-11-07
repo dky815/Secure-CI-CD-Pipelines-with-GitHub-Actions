@@ -33,6 +33,8 @@ public class Order implements Serializable {
 
   private int orderId;
   private String username;
+
+
   private Date orderDate;
   private String shipAddress1;
   private String shipAddress2;
