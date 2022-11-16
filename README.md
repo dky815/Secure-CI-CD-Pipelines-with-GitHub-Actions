@@ -20,7 +20,9 @@ Structure
 > | Name        | Description |
   > | -------------- | ----------- |
 > | Gitleaks    | Gitleaks is a SAST tool for detecting and preventing hardcoded secrets like passwords, api keys, and tokens in git repos. |
+> | GitGuardian    | GitGuardian is a secret scanning tool for scanning your source code to detect api keys, passwords, certificates, encryption keys and other sensitive data in real-time. |
 > | CodeQL           | Discover vulnerabilities across a codebase with CodeQL, our industry-leading semantic code analysis engine.|
+> | Semgrep          | A fast, open-source, static analysis engine for finding bugs, detecting vulnerabilities in third-party dependencies, and enforcing code standards.|
 > | Sonar     | Enable your team to deliver clean code consistently and efficiently with a tool that easily integrates into the cloud DevOps platforms and extend your CI/CD workflow.|
 > | Snyk     | Find and automatically fix vulnerabilities in your code, open source dependencies, containers, and infrastructure as code.|
 > | Create Image   | Create a docker image containing the project |
@@ -38,10 +40,14 @@ Structure
 - secrets.SONAR_TOKEN  
 - Dsonar.projectKey
 
-#### gitleaks
+#### Gitleaks
 
+#### GitGuardian
+- secrets.GITGUARDIAN_API_KEY
 
-#### CodeQL-Build
+#### Semgrep
+
+#### CodeQL
 
 #### snykScan
 - secrets.SNYK_TOKEN
