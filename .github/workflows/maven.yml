@@ -59,7 +59,7 @@ jobs:
 
 
   gitleaks:
-    name: secret scan using Gitleaks
+    name: Secret Scan using Gitleaks
     runs-on: ubuntu-latest
 
     steps:
@@ -70,7 +70,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  # GitGuardian:
+  #     name: Secret Scan using GitGuardian
+  #     runs-on: ubuntu-latest
+  #     steps:
+  #       - name: Checkout
+  #         uses: actions/checkout@v2
+  #         with:
+  #           fetch-depth: 0 # fetch all history so multiple commits can be scanned
+  #       - name: GitGuardian scan
+  #         uses: GitGuardian/ggshield-action@master
+  #         with:
+  #           args: -v --all-policies
+  #         env:
+  #           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+  #           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+  #           GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+  #           GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+  #           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+
   CodeQL-Build:
+    name: SAST Scan using CodeQL
     runs-on: ubuntu-latest
     permissions:
 
@@ -137,7 +157,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: production
-    needs: [snykScan,gitleaks,CodeQL-Build,sonar]
+    needs: [snykScan,gitleaks,CodeQL-Build,sonar,semgrep]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
