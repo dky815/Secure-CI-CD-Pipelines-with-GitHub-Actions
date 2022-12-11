@@ -244,6 +244,7 @@ jobs:
           cmd_options: '-a'
 
   nuclei-scan:
+    needs: [zap]
     runs-on: ubuntu-latest
     # needs: [upload_file]
     steps:
