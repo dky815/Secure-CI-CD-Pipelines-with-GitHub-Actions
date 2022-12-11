@@ -243,37 +243,37 @@ jobs:
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
 
-nuclei-scan:
-  runs-on: ubuntu-latest
-  # needs: [upload_file]
-  steps:
-    - uses: actions/checkout@v3
-    # - name: Run npm install
-    #   run: npm install
-    # Runs the ESlint code analysis
-    - name: Run ESLint
-      # eslint exits 1 if it finds anything to report
-      run: node_modules/.bin/eslint build docs lib script spec-main -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o results.sarif || true
-    # Uploads results.sarif to GitHub repository using the upload-sarif action
+  nuclei-scan:
+    runs-on: ubuntu-latest
+    # needs: [upload_file]
+    steps:
+      - uses: actions/checkout@v3
+      # - name: Run npm install
+      #   run: npm install
+      # Runs the ESlint code analysis
+      - name: Run ESLint
+        # eslint exits 1 if it finds anything to report
+        run: node_modules/.bin/eslint build docs lib script spec-main -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o results.sarif || true
+      # Uploads results.sarif to GitHub repository using the upload-sarif action
 
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Nuclei - Vulnerability Scan
-      uses: projectdiscovery/nuclei-action@main
-      with:
-        # templates: 'https://github.com/projectdiscovery/nuclei-templates/blob/74c4049363a703a44c72814d80db9050fa4ebb38/cnvd/2022/CNVD-2022-03672.yaml'
-        target: 'http://ecsloadbalancer-1600554619.us-west-2.elb.amazonaws.com/jpetstore'
-        sarif-export: results.sarif
+      - name: Nuclei - Vulnerability Scan
+        uses: projectdiscovery/nuclei-action@main
+        with:
+          # templates: 'https://github.com/projectdiscovery/nuclei-templates/blob/74c4049363a703a44c72814d80db9050fa4ebb38/cnvd/2022/CNVD-2022-03672.yaml'
+          target: 'http://ecsloadbalancer-1600554619.us-west-2.elb.amazonaws.com/jpetstore'
+          sarif-export: results.sarif
 
-    - name: GitHub Security Dashboard Alerts update
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        # sh: "-v"
-        sarif_file: results.sarif
-        # category: my-analysis-tool
+      - name: GitHub Security Dashboard Alerts update
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # sh: "-v"
+          sarif_file: results.sarif
+          # category: my-analysis-tool
 
-    - name: GitHub Workflow artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: nuclei.log
-        path: nuclei.log
+      - name: GitHub Workflow artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: nuclei.log
+          path: nuclei.log
