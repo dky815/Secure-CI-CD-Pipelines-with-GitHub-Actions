@@ -8,7 +8,7 @@ Kayu Dong, Shaolun Liu, Jason Chen(lca160@sfu.ca)
 
 Secure Flow is a GitHub Action pipeline with security features for Maven projects. It uses varieties of security tools to eliminate vulnerabilities happens in the development process, bringing developers a clear view of the quality of the project.
 
-* Mailing list:lca160@sfu.ca
+* Mailing list: lca160@sfu.ca
 ## Adding new features
 
 This section includes advice on how to build new features for the project & what kind of process it includes.
@@ -17,13 +17,19 @@ This section includes advice on how to build new features for the project & what
 Adapting the flow to non-JAVA project.  
 Setting up the testing baseline. When the code does not pass the baseline, stop deploying.  
 Send email or SMS when the execution fails.
-* Here are some specifics on the coding style we prefer:
-* This is how you send your pull request:
-* You should include the following tests:
-* These are the updates we hope you make to the changelog:
+* Here are some specifics on the coding style we prefer:  
+Do your best to have [well-formed commit messages] for each change.  
+This provides consistency throughout the project, and ensures that commit messages are able to be formatted properly by various git tools.
+* This is how you send your pull request:  
+Follow the normal process of [forking] the project, and setup a new branch to work in.  
+It's important that each group of changes be done in separate branches in order to ensure that a [pull request] only includes the commits related to that bug or feature.
+
+[forking]: https://help.github.com/articles/fork-a-repo
+[well-formed commit messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[pull request]: https://help.github.com/articles/creating-a-pull-request
 
 Don’t get discouraged! We estimate that the response time from the
-maintainers is around:
+maintainers is around: 1 week.
 
 # Bug triage
 
