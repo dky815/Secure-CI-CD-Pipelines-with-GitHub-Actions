@@ -1,7 +1,4 @@
-/* CONTRIBUTE */
-
-
-# Contribute.md
+# Contribute
 
 ## Team members
 
