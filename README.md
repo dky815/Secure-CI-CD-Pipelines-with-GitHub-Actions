@@ -12,7 +12,7 @@ Secure Flow is a GitHub Action pipeline with security features for Maven project
 
 Structure
 ----------
-![Secure Flow](https://github.com/dky815/secure_flow/blob/master/img/structure.png)
+![Secure Flow](img/structure.png)
 
 ## Modules
 >
