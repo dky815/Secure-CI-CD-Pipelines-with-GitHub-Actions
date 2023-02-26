@@ -3,11 +3,11 @@ FROM alpine:latest
 RUN  apk --no-cache add openjdk11 git
 
 RUN \ 
-    git clone https://github.com/cl456852/jpetstore-6 && \
-    cd jpetstore-6 && \
+    git clone https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions.git && \
+    cd Secure-CI-CD-Pipelines-with-GitHub-Actions && \
     ./mvnw clean package
 
-WORKDIR /jpetstore-6
+WORKDIR /Secure-CI-CD-Pipelines-with-GitHub-Actions
 
 CMD ["./mvnw","cargo:run","-P tomcat90"]
 
