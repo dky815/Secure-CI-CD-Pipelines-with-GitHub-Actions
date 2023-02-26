@@ -13,9 +13,8 @@ env:
   ECS_TASK_DEFINITION: aws/task_definition.json # set this to the path to your Amazon ECS task definition
   # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: sample-app           # set this to the name of the container in the
+
 jobs:
-
-
 
   sonar:
     name: Inspect - Using Sonar
@@ -47,7 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify -DexcludedGroups="Smoke | Staging | LamdaTest | BrowserStack" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.issuesReport.html.enable=true -Dsonar.projectKey=cl456852_jpetstore-6
+        run: mvn -B verify -DexcludedGroups="Smoke | Staging | LamdaTest | BrowserStack" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.issuesReport.html.enable=true -Dsonar.projectKey=dky815_Secure-CI-CD-Pipelines-with-GitHub-Actions
 #      - name: SonarQube Quality Gate check
 #        uses: sonarsource/sonarqube-quality-gate-action@master
 #        env:
@@ -92,18 +91,27 @@ jobs:
   CodeQL-Build:
     name: SAST Scan using CodeQL
     runs-on: ubuntu-latest
+
     permissions:
-
-      security-events: write
-
       actions: read
       contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'java' ]
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+           fetch-depth: 0
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2
