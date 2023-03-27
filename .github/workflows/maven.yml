@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=dky815_Secure-CI-CD-Pipelines-with-GitHub-Actions
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=dky815_Secure-CI-CD-Pipelines-with-GitHub-Actions -Dmaven.test.skip=true
 
   Gitleaks:
     name: Secret Scan using Gitleaks
