@@ -17,6 +17,10 @@ Structure
 ----------
 ![Secure CI/CD pipeline](img/structure.png)
 
+From [Actions page](https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions/actions/runs/4631735247) in the repo:
+
+![Actions page](img/GitHub-Actions.png)
+
 ## Modules
 >
 >
