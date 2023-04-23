@@ -15,7 +15,7 @@ The pipeline supports multiple programming languages. Here are the [Python demo]
 
 Structure
 ----------
-![Secure Flow](img/structure.png)
+![Secure CI/CD pipeline](img/structure.png)
 
 ## Modules
 >
