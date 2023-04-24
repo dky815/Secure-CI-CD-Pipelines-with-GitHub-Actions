@@ -17,7 +17,7 @@ env:
   TARGET: https://app2727.azurewebsites.net/jpetstore/
 jobs:
   SonarCloud:
-    name: Inspect - Using Sonar
+    name: SAST Scan using Sonar
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
