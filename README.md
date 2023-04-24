@@ -15,11 +15,11 @@ The pipeline supports multiple programming languages. Here are the [Python demo]
 
 Structure
 ----------
-![Secure CI/CD pipeline](img/structure.png)
+![Structure](img/structure.png)
 
-From [Actions page](https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions/actions/runs/4631735247) in the repo:
+[Pipeline visualization:](https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions/actions/runs/4631735247)
 
-![Actions page](img/GitHub-Actions.png)
+![Pipeline visualization](img/pipeline-visualization.png)
 
 ## Modules
 >
