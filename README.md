@@ -73,6 +73,11 @@ Structure
  - Docker File for creating docker image  
    https://github.com/cl456852/jpetstore-6/blob/master/Dockerfile
 
+## Scan Reports
+The scan reports will be uploaded to the [security page](https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions/security/code-scanning) of the repo. Due to the permission policy of personal account repositories, only the owner and collaborators of the repository can view the details of the security page.
+
+Here is a screenshot of the scan report:
+![Scan Report](img/scan-report.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
