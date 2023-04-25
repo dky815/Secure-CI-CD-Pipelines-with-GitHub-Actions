@@ -3,6 +3,8 @@ Secure CI/CD pipeline with GitHub Actions
 
 Secure CI/CD pipeline is a GitHub Action pipeline with security features for your projects. It uses varieties of security tools to eliminate vulnerabilities happens in the development process, bringing developers a clear view of the quality of the project.
 
+The workflow implementation is [here](.github/workflows/DevSecOps.yml).
+
 This repo uses [MyBatis JPetStore](https://github.com/mybatis/jpetstore-6) project as a Java demo. 
 
 The pipeline supports multiple programming languages. Here are the [Python demo](https://github.com/dky815/PythonDemo) and the [C# demo](https://github.com/dky815/CSharpDemo).
