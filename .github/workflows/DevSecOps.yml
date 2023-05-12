@@ -14,7 +14,7 @@ env:
   DEPLOYMENT_PLATFORM: aws # 1 for AWS, 2 for Azure, 3 for Google Cloud
   #TARGET: https://securepipeline-ul7wfbu6fa-uc.a.run.app/jpetstore
   #TARGET: http://ecsloadbalancer-1835225366.us-west-2.elb.amazonaws.com/jpetstore
-  TARGET: https://app2727.azurewebsites.net/jpetstore/
+  TARGET: https://devsecops-javademo.azurewebsites.net/jpetstore/
 jobs:
   SonarCloud:
     name: SAST Scan using Sonar
