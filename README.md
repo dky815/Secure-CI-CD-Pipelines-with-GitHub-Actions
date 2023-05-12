@@ -17,6 +17,18 @@ Structure
 
 ![Pipeline visualization](img/pipeline-visualization.png)
 
+## Integration with Jira, Confluence and BitBucket
+### Jira
+Integrate with Jira to provide better traceability between Planning, Requirement, Code, Build and Test Execution.
+Check commits, pipeline status and deployment status via Jira-board: ![Jira-board](img/Jira-board.png)
+
+### Confluence
+Integrate with Confluence to present more information about Github repos in the context of Confluence without visiting Github.
+![Confluence](img/Confluence.png)
+
+### BitBucket
+Mirror the GitHub Git repository to Bitbucket.
+
 ## Modules
 >
 >
